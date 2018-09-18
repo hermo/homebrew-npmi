@@ -1,8 +1,8 @@
 class Npmi < Formula
   desc "Locally caching 'npm install'"
   homepage "https://github.com/hermo/npmi"
-  url "https://github.com/hermo/npmi/archive/v6.1.0.tar.gz"
-  sha256 "31651a51fb0379fdc44f3b404bb05191f56ec686350912b3ad22f363443ca291"
+  url "https://github.com/hermo/npmi/archive/v6.2.0.tar.gz"
+  sha256 "e9c2de70585909b7a7a52d0af9df95f12d6f054092b9b419f6dbb15a36ec72b5"
 
   def install
     bin.install "npmi"
