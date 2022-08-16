@@ -5,30 +5,37 @@
 class NpmiGo < Formula
   desc "npmi-go caches the contents of node_modules directory in a tarball stored locally or in a Minio instance"
   homepage "https://github.com/hermo/npmi-go"
-  version "0.7.1"
+  version "0.8.0"
   license "MIT"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.7.1/npmi-go_0.7.1_macOS_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "18407f0e3b2f8869e88d5acd7d45b4a6e952b1a4afdc4e26e858d422e753f465"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.7.1/npmi-go_0.7.1_macOS_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "ea8d0f42f5c9014871eda34b51522cf88f62dbf1de3f291cff884c12c5043183"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.0/npmi-go_0.8.0_macOS_arm64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "1b869428f573f34315982b0215324348320e54210dd60c696e989c8779b04a05"
+
+      def install
+        bin.install "npmi-go"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.0/npmi-go_0.8.0_macOS_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "babf84cbc26819c24d0217b392d2c92f4a4804480bf8d4e95f9c813956c53c4b"
+
+      def install
+        bin.install "npmi-go"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.7.1/npmi-go_0.7.1_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "1b5d18fbe5ade53f747949f9b75f93897190d5cd3e8e399a55d727051c2cb222"
-    end
-  end
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.0/npmi-go_0.8.0_linux_amd64.tar.gz", :using => CurlDownloadStrategy
+      sha256 "9d971261c74dce1e0d4216ac4b7912d6e8e972e590244b10f0c8cd644b93a2d1"
 
-  def install
-    bin.install "npmi-go"
+      def install
+        bin.install "npmi-go"
+      end
+    end
   end
 
   def caveats; <<~EOS
