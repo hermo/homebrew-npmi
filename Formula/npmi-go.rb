@@ -10,16 +10,16 @@ class NpmiGo < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_macOS_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "2f8d3278a470512eee097c925ec06ad5d7ad121373f4a63d4f1fd191a226fb14"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f3276011773b9b134113bf6a04b8491e7c274e59b4ec4fde682e4b517a32e02e"
 
       def install
         bin.install "npmi-go"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_macOS_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "34a06c4d394782a7e241b8061572b386d202e8d73ea793a4e583fc5367dbe035"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "404877e7728bf136fe73614fee885b21572aaf73a779f2fb34705603f89a8718"
 
       def install
         bin.install "npmi-go"
@@ -30,7 +30,7 @@ class NpmiGo < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "f019f65e8fd19e59bbacab56efbbe8ae8735f047cbd81db92acc2af4c165d47a"
+      sha256 "3d1e3ab00368017ef243b4d6fcc3d8b4a3802c8f93ecfdcf69758112eaec760c"
 
       def install
         bin.install "npmi-go"
