@@ -5,21 +5,21 @@
 class NpmiGo < Formula
   desc "npmi-go caches the contents of node_modules directory in a tarball stored locally or in a Minio instance"
   homepage "https://github.com/hermo/npmi-go"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.8.0/npmi-go_0.8.0_macOS_arm64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "1b869428f573f34315982b0215324348320e54210dd60c696e989c8779b04a05"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_macOS_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "2f8d3278a470512eee097c925ec06ad5d7ad121373f4a63d4f1fd191a226fb14"
 
       def install
         bin.install "npmi-go"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.8.0/npmi-go_0.8.0_macOS_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "babf84cbc26819c24d0217b392d2c92f4a4804480bf8d4e95f9c813956c53c4b"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_macOS_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "34a06c4d394782a7e241b8061572b386d202e8d73ea793a4e583fc5367dbe035"
 
       def install
         bin.install "npmi-go"
@@ -29,8 +29,8 @@ class NpmiGo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.8.0/npmi-go_0.8.0_linux_amd64.tar.gz", :using => CurlDownloadStrategy
-      sha256 "9d971261c74dce1e0d4216ac4b7912d6e8e972e590244b10f0c8cd644b93a2d1"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.8.1/npmi-go_0.8.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "f019f65e8fd19e59bbacab56efbbe8ae8735f047cbd81db92acc2af4c165d47a"
 
       def install
         bin.install "npmi-go"
@@ -38,8 +38,9 @@ class NpmiGo < Formula
     end
   end
 
-  def caveats; <<~EOS
-    Note that npmi-go is work-in-progress and should not be used in production.
-  EOS
+  def caveats
+    <<~EOS
+      Note that npmi-go is work-in-progress and should not be used in production.
+    EOS
   end
 end
