@@ -5,21 +5,21 @@
 class NpmiGo < Formula
   desc "npmi-go caches the contents of node_modules directory in a tarball stored locally or in a Minio instance"
   homepage "https://github.com/hermo/npmi-go"
-  version "0.9.0"
+  version "0.10.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.9.0/npmi-go_0.9.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "294e14fc5cc34a133fa1cf0920c71580e7a72969ac4897d6fa179450effe38af"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.10.0/npmi-go_0.10.0_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "01e552cd01ae9b410e718c82518540fedca376b496401854bbb12545446debe5"
 
       def install
         bin.install "npmi-go"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.9.0/npmi-go_0.9.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "a4ccb6966636ae64eae131854728327dd26c18b28c7df024fc40376fb881f58b"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.10.0/npmi-go_0.10.0_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "a4ef0b2dbf6593b66d267c9391a84d1401e0963fc031dfe06b166a2069d929ad"
 
       def install
         bin.install "npmi-go"
@@ -29,8 +29,8 @@ class NpmiGo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.9.0/npmi-go_0.9.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "aacf596fb725a97e364220f32b86abb6f318e6e30b119a3f85b2a0915d5306d4"
+      url "https://github.com/hermo/npmi-go/releases/download/v0.10.0/npmi-go_0.10.0_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "e30849780b637120be8259fd621ec4075ee3a9b91edfadde9331de9905b6ab92"
 
       def install
         bin.install "npmi-go"
