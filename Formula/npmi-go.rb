@@ -5,21 +5,21 @@
 class NpmiGo < Formula
   desc "npmi-go caches the contents of node_modules directory in a tarball stored locally or in a Minio instance"
   homepage "https://github.com/hermo/npmi-go"
-  version "0.10.1"
+  version "0.9.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.10.1/npmi-go_0.10.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "dd8f60ec870603339b752ade58dec071ea5fcfa5b34055da6d298b9889758dda"
+    if Hardware::CPU.intel?
+      url "https://github.com/hermo/npmi-go/releases/download/v0.9.1/npmi-go_0.9.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "0c5523364a5b258bfa26bf457de7925aa4ac575036e6a6f91bd3336d29a4b949"
 
       def install
         bin.install "npmi-go"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.10.1/npmi-go_0.10.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "333a169bedba11c886d80be26c9ca7fc2191ae71264bc517d975abb59fe8a8e4"
+    if Hardware::CPU.arm?
+      url "https://github.com/hermo/npmi-go/releases/download/v0.9.1/npmi-go_0.9.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "5e433b8196e2357c2f0c19cca122224ca7e8c53ece7ff6dd79c51c85a1533a50"
 
       def install
         bin.install "npmi-go"
@@ -29,11 +29,13 @@ class NpmiGo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hermo/npmi-go/releases/download/v0.10.1/npmi-go_0.10.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "708867ab644c09314de0ea65ac4b21c5560bcf0349773556fb78872bb305b489"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/hermo/npmi-go/releases/download/v0.9.1/npmi-go_0.9.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
+        sha256 "a4c05eaa486142dbaae03fe2bcc595530a11c2f7d9fc284a0d6059ba4af9fe90"
 
-      def install
-        bin.install "npmi-go"
+        def install
+          bin.install "npmi-go"
+        end
       end
     end
   end
